@@ -32,8 +32,11 @@ function readFile(fileName, lineSep, fieldSep, skipEmpty) {
     header: header,
     items: _(lines).map(function (line) {
       var fields = line.split(fieldSep);
+      /*
       if (skipEmpty && _(fields).compact().isEmpty()) return;
       return _(header).zip(fields).toObject();
+      */
+      return fields
     }).compact().toArray()
   };
 }
